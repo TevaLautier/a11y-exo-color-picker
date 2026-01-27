@@ -1,0 +1,15 @@
+<div class="color-picker">
+  <p>Choisir une couleur de thème :</p>
+
+  <div class="swatches">
+    <!-- ERREUR : Pas de bouton radio, pas de focus, pas de label -->
+    @for (color of colors; track color.name) {
+    <div
+      class="swatch-card"
+      [style.background-color]="color.hex"
+      (click)="selectColor(color)"
+      [class.active]="selectedColor === color"
+    ></div>
+    }
+  </div>
+</div>

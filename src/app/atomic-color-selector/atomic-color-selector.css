@@ -1,0 +1,54 @@
+.swatches {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+/* La pastille visuelle */
+.swatch-card {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* On stylise le label via l'état du radio précédent */
+.sr-only:checked + .swatch-card {
+  transform: scale(1.1);
+  border-color: #000; /* Cercle noir autour de la couleur choisie */
+}
+
+/* FOCUS CLAVIER : On montre que l'utilisateur navigue sur la radio masquée */
+.sr-only:focus-visible + .swatch-card {
+  outline: 3px solid #6366f1;
+  outline-offset: 3px;
+}
+
+/* Symbole de validation */
+.check {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Classe utilitaire pour cacher sans supprimer du lecteur d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

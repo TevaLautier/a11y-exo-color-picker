@@ -4,9 +4,10 @@
   <div class="swatches">
     <!-- ERREUR : Pas de bouton radio, pas de focus, pas de label -->
     @for (color of colors; track color.name) {
-    <input type=radio [aria-label]="color.name"
+    <input type=radio name="color" [aria-label]="color.name"
       class="swatch-card"
       [attr.data-bg]="color.hex"
+      [style.background-color]="color.hex" 
       (click)="selectColor(color)"
       [class.active]="selectedColor === color"
     >

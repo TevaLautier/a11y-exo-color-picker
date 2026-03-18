@@ -5,13 +5,15 @@
 }
 
 /* La pastille visuelle */
-.swatch-card {
+.swatch-card::after {
+  content:'';
   display: block;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
+  background-color: attr(data-bg);
   border: 2px solid transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, border-color 0.2s;

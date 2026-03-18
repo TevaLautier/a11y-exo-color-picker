@@ -52,3 +52,63 @@
   white-space: nowrap;
   border: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input.swatch-card {
+  appearance: none; /* Masque le rond radio par défaut */
+  -webkit-appearance: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%; /* Forme circulaire */
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid #CCC;
+  background-color: #FFF; /* Fallback */
+}
+/* État Hover */
+input.swatch-card:hover {
+    transform: scale(1.1);
+    box-shadow: #AAA;
+}
+
+/* État Sélectionné (.active ou :checked) */
+input.swatch-card.active, 
+input.swatch-card:checked {
+    border: 2px solid blue; /* Couleur officielle DSFR */
+    
+}
+
+/* Ajout d'une coche blanche quand sélectionné (Optionnel) */
+input.swatch-card:checked::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.8rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-top: -2px;
+}
+
+/* État Focus (Accessibilité - obligatoire DSFR) */
+input.swatch-card:focus-visible {
+    outline: 1px solid blue;
+    outline-offset: 5px;
+}
